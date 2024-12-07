@@ -1,0 +1,132 @@
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Agile Sans Variable', sans-serif;
+    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    label {
+        display: block;
+        font-size: 1rem;
+        color: #666;
+    }
+
+    .length-control {
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            width: 50px;
+            &.invalid {
+                border-color: red;
+                outline: none;
+            }
+        }
+    }
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .form-check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #666;
+        }
+    }
+}
+
+.generated-password {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h2 {
+        font-size: 1.2rem;
+        color: #333;
+        margin: 0;
+    }
+
+    .password-display {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: monospace;
+        border: 1px solid #ddd;
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+
+    button {
+        flex: 1;
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        border: none;
+        transition: all 0.2s ease;
+        font-family: inherit;
+
+        &.btn-primary {
+            background-color: #3366ff;
+            color: white;
+
+            &:hover {
+                background-color: darken(#3366ff, 10%);
+            }
+        }
+
+        &.btn-outline-primary {
+            background-color: transparent;
+            border: 1px solid #3366ff;
+            color: #3366ff;
+
+            &:hover {
+                background-color: #3366ff;
+                color: white;
+            }
+        }
+
+        &[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}

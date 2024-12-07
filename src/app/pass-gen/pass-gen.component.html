@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>Customize your new password</h1>
+
+  <div class="form-group">
+    <label for="characters">Characters:</label>
+    <div class="length-control">
+      <input type="number" id="characters" [(ngModel)]="charCount" [class.invalid]="charCount < 4 || !charCount">
+    </div>
+  </div>
+
+  <div class="checkbox-group">
+    <div class="form-check">
+      <input type="checkbox" id="includeAlphabet" class="form-check-input" 
+        [(ngModel)]="includeAlphabet"  [disabled]="!includeNumbers && !includeSpecialChars"
+        (ngModelChange)="generatePassword()">
+      <label for="includeAlphabet" class="form-check-label">Alphabet</label>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" id="includeNumbers" class="form-check-input" 
+        [(ngModel)]="includeNumbers" [disabled]="!includeAlphabet && !includeSpecialChars"
+        (ngModelChange)="generatePassword()">
+      <label for="includeNumbers" class="form-check-label">Numbers</label>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" id="includeSpecialChars" class="form-check-input" 
+        [(ngModel)]="includeSpecialChars" [disabled]="!includeAlphabet && !includeNumbers"
+        (ngModelChange)="generatePassword()">
+      <label for="includeSpecialChars" class="form-check-label">Symbols</label>
+    </div>
+  </div>
+
+  <div class="generated-password">
+    <div class="password-display">
+      <span>{{generatedPassword}}</span>
+    </div>
+  </div>
+
+  <div class="button-group">
+    <button class="btn btn-primary" (click)="copyPassword()">Copy password</button>
+    <button class="btn btn-outline-primary" (click)="generatePassword()" [disabled]="charCount < 4 || !charCount">Generate password</button>
+  </div>
+</div>
